@@ -1,0 +1,10 @@
+mixin videoBlock-search(video ={})
+    .videoBlock-search
+        video.videoBlock-search__thumbnail(src=video.videoFile)
+        .videoBlock-search-info
+            h3.videoBlock-search-info__title=video.title
+            .videoBlock-search-info-more
+                h6.videoBlock-search-info-more__creatorName=video.creatorName
+                h6.videoBlock-search-info-more__views 조회수 #{video.views}회
+                h6.videoBlock-search-info-more__date=video.date
+            h6.videoBlock-search-info__description=video.description

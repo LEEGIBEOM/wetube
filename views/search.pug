@@ -1,4 +1,16 @@
 extends layouts/main
+include mixins/videoBlock-search
 
 block content
-    p Search for: #{searchingBy}
+    .search__header
+        h3 Search for: #{searchingBy}
+    .search__videos
+        each video in videos 
+            +videoBlock-search({
+                videoFile: video.videoFile,
+                title: video.title,
+                creatorName: video.creator.name,
+                views: video.views,
+                date: `${video.date.year}년${video.date.month}월${video.date.day}일 ${video.date.hour}시${video.date.minute}분`,
+                description: video.description
+            })

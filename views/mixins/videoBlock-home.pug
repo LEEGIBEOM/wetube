@@ -1,0 +1,8 @@
+mixin videoBlock-home(video = {})
+    .videoBlock-home
+        video.videoBlock-home__thumbnail(src=video.videoFile, controls="controls")
+        h3.videoBlock-home__title=video.title
+        h6.videoBlock-home__creatorName=video.creatorName
+        .vidioBlock-home-more
+            h6.videoBlock-home-more__views 조회수 #{video.views}회
+            h6.videoBlock-home-more__date=video.date

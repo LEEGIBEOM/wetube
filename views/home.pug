@@ -1,5 +1,13 @@
 extends layouts/main
+include mixins/videoBlock-home
 
 block content
     .videos
-        h1 Video
+        each video in videos
+            +videoBlock-home({
+                videoFile: video.videoFile,
+                title: video.title,
+                creatorName: video.creator.name,
+                views: video.views,
+                date: `${video.date.year}년${video.date.month}월${video.date.day}일 ${video.date.hour}시${video.date.minute}분`
+            })
